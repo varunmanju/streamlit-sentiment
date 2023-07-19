@@ -11,6 +11,10 @@ Steps:
 
 3> Once this is done then make sure you set the connection parameters in the connection variable in the sentiment.py file.
 
+4> Run the populate_test.ipynb file to populate the database.This is the test data which contains the model's prediction and actual label of the sentiment
+
+5> Rhen do streamlit run sentiment.py. Open the url in the browser to view the test dataset analysis.
+
 
 
 
