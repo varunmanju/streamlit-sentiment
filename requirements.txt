@@ -6,3 +6,4 @@ oci
 matplotlib
 seaborn
 scikit-learn
+load_dotenv
