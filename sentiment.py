@@ -6,6 +6,7 @@ import oracledb
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report
+from pathlib import Path
 import os
 from dotenv import load_dotenv
 
@@ -13,22 +14,19 @@ load_dotenv()
 global_rows=[]
 
 st.title("Data")
-# pw = getpass.getpass("Enter password:")
-# wallet_pw=getpass.getpass("Enter wallet password:")
 connection=oracledb.connect(
-     user=os.getenv("user"),
-     password=os.getenv("password"),
-     dsn=os.getenv("dsn"),
-     config_dir= os.getenv("config_dir"),
-     wallet_location=os.getenv("wallet_location"),
-     wallet_password=os.getenv("wallet_password")
-     )
+     user=os.getenv("USERNAME"),
+     password=os.getenv("PASSWORD"),
+     dsn=os.getenv("DSN"),
+     config_dir=os.getenv("CONFIG_DIR"),
+     wallet_location=os.getenv("WALLET_LOCATION"),
+     wallet_password=os.getenv("WALLET_PASSWORD"))
 
 with connection.cursor() as cursor:
-    for row in cursor.execute("select * from test_pred"):
+    for row in cursor.execute("select * from twitter_sentiments"):
         global_rows.append(row)
 
-df = pd.DataFrame(global_rows, columns=["textID", "text", "selected_text","actual_label","time_of_tweet","age_of_user","country","population_2020","land_area_(Km-square)","density_(P/Km-square)","model_pred"])
+df = pd.DataFrame(global_rows, columns=["textID", "text", "selected_text","actual_label","time_of_tweet","age_of_user","country","population","land_area","density","model_pred"])
 st.dataframe(df)
 
 st.title("Plots")
@@ -45,7 +43,7 @@ ax.tick_params(axis='x', rotation=45)
 st.pyplot(fig)
 
 plt.figure(figsize=(12, 8))
-sns.histplot(data=df, x='population_2020', bins=20, kde=True)
+sns.histplot(data=df, x='population', bins=20, kde=True)
 plt.title('Population Distribution')
 plt.xlabel('Population (2020)')
 plt.ylabel('Frequency')
