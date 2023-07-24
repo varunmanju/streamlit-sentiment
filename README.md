@@ -18,11 +18,21 @@
 
 2> Download the database wallet and ensure that you use this Wallet to connect to the database via Mutual TLS connection.
 
-3> Once this is done then make sure you set the connection parameters in the connection variable in the sentiment.py file.
+3> Create a .env file and create to set the following parameters:
 
-4> In populate_test_data.ipynb file make sure that you set the connection variable to the required parameters that your Database needs.
+    user (Username of the Database. By default it is admin)
 
-5> Run the populate_test_data.ipynb file to populate the database. This is the test data which contains the model's prediction and actual label of the sentiment.
+    password (Password of your database you set during creation)
+
+    dsn (Connection string in tnsnames.ora file)
+
+    config_dir (Location of the tnsnames.ora file)
+
+    wallet_location (Location where the wallet is downloaded)
+
+    wallet_password (Password of the wallet directory downloaded when creating the Autonomous database)
+    
+4> Run the populate_test_data.ipynb file to populate the database. This is the test data which contains the model's prediction and actual label of the sentiment.
 
 # Project Description:
 
