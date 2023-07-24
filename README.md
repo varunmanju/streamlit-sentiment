@@ -1,6 +1,6 @@
 # Sentiment Analysis Twitter Dataset using Oracle Cloud.
 
-Pre-requisites or Technologies Used:
+# Pre-requisites or Technologies Used:
 
 1> Python 3.11 for development.
 
@@ -10,9 +10,9 @@ Pre-requisites or Technologies Used:
 
 4> oracledb python package to connect to the Oracle Database.
 
-5> Create a python virtual environment and run pip install -r requirements.txt to install the packages.
+5> Create a Python virtual environment and run pip install -r requirements.txt to install the packages.
 
-Setup Development Environment:
+# Setup Development Environment:
 
 1> Make sure to create an Oracle autonomous database on the Oracle cloud with ATP(Autonomous transaction processing) option enabled. In addition to that set a password for the database and make sure to enable free tier.
 
@@ -22,7 +22,7 @@ Setup Development Environment:
 
 4> Run the populate_test.ipynb file to populate the database.This is the test data which contains the model's prediction and actual label of the sentiment
 
-Project Description:
+# Project Description:
 
 1> I had created a custom Sentiment Classifier model and trained it on Oracle Cloud. Then I called the model endpoint via python and ran it on the test data. This test data is what I have written to the Oracle Database. The model was costing a lot when it was on cloud so I had to delete it. 
 
@@ -34,7 +34,7 @@ Project Description:
 
 5> The test data is displayed by using streamlit a python package to render content in HTML.
 
-Validate Application:
+# Validate Application:
 
 1> Do streamlit run sentiment.py. Open the url in the browser to view the test dataset analysis.
 
