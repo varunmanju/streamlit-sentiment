@@ -20,7 +20,9 @@
 
 3> Once this is done then make sure you set the connection parameters in the connection variable in the sentiment.py file.
 
-4> Run the populate_test.ipynb file to populate the database.This is the test data which contains the model's prediction and actual label of the sentiment
+4> In populate_test_data.ipynb file make sure that you set the connection variable to the required parameters that your Database needs.
+
+5> Run the populate_test_data.ipynb file to populate the database. This is the test data which contains the model's prediction and actual label of the sentiment.
 
 # Project Description:
 
@@ -36,7 +38,7 @@
 
 # Validate Application:
 
-1> Do streamlit run sentiment.py. Open the url in the browser to view the test dataset analysis.
+1> Do streamlit run sentiment.py. Open the URL in the browser to view the test dataset analysis.
 
 
 
