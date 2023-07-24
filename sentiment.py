@@ -15,11 +15,17 @@ global_rows=[]
 
 st.title("Data")
 connection=oracledb.connect(
+    #By default the username is admin when you create the database
      user=os.getenv("USERNAME"),
-     password=os.getenv("PASSWORD"),
+    #Password of your database you set during creation
+     password=os.getenv("PASSWORD"), 
+    #Connection string in tnsnames.ora file
      dsn=os.getenv("DSN"),
+    #Location of the tnsnames.ora file
      config_dir=os.getenv("CONFIG_DIR"),
+    #Location where the wallet is downloaded
      wallet_location=os.getenv("WALLET_LOCATION"),
+    #Password of the wallet fiel downloaded when creating the Autonomoud database
      wallet_password=os.getenv("WALLET_PASSWORD"))
 
 with connection.cursor() as cursor:
